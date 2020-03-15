@@ -15,6 +15,7 @@
 		EE118D70241E67FF0069CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE118D6F241E67FF0069CB1F /* Assets.xcassets */; };
 		EE118D73241E67FF0069CB1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE118D71241E67FF0069CB1F /* LaunchScreen.storyboard */; };
 		EE118D7E241E67FF0069CB1F /* NewTestIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D7D241E67FF0069CB1F /* NewTestIOSTests.swift */; };
+		EE118D8A241E72810069CB1F /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D89241E72810069CB1F /* HomeInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		EE118D79241E67FF0069CB1F /* NewTestIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewTestIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE118D7D241E67FF0069CB1F /* NewTestIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTestIOSTests.swift; sourceTree = "<group>"; };
 		EE118D7F241E67FF0069CB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE118D89241E72810069CB1F /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		EE118D65241E67FE0069CB1F /* NewTestIOS */ = {
 			isa = PBXGroup;
 			children = (
+				EE118D88241E72500069CB1F /* TableViewCells */,
 				EE118D66241E67FE0069CB1F /* AppDelegate.swift */,
 				EE118D68241E67FE0069CB1F /* SceneDelegate.swift */,
 				EE118D6A241E67FE0069CB1F /* HomeViewController.swift */,
@@ -126,6 +129,14 @@
 				EE118D7F241E67FF0069CB1F /* Info.plist */,
 			);
 			path = NewTestIOSTests;
+			sourceTree = "<group>";
+		};
+		EE118D88241E72500069CB1F /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				EE118D89241E72810069CB1F /* HomeInfoTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 			files = (
 				EE118D6B241E67FE0069CB1F /* HomeViewController.swift in Sources */,
 				EE118D67241E67FE0069CB1F /* AppDelegate.swift in Sources */,
+				EE118D8A241E72810069CB1F /* HomeInfoTableViewCell.swift in Sources */,
 				EE118D69241E67FE0069CB1F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

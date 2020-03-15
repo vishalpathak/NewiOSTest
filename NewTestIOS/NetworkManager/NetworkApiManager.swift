@@ -12,7 +12,6 @@ class NetworkApiManager: NSObject{
     static let sharedNetworkApiManager = NetworkApiManager()
     
     func getDataFromUrl<T: Decodable>(_ urlPath: String, completion: @escaping (T?, _ err: Error?) -> ()){
-        
         let session = URLSession.shared
         guard let url = URL(string: urlPath) else { return }
         let task = session.dataTask(with: url) { (data, response, error) in

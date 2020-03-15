@@ -11,8 +11,9 @@ import UIKit
 class HomeViewController: UIViewController {
    
     //MARK:- UI Compenents
-    var tableInfoList = UITableView()
+    fileprivate var tableInfoList = UITableView()
     fileprivate let cellId = "cellId"
+    var activity = UIActivityIndicatorView()
     
     //MARK:- Data Variables
     var arrayInfoList = [RowInfo]()
@@ -39,11 +40,12 @@ class HomeViewController: UIViewController {
     
     //MARK:- Fetch Data from API, assign to array, Populate table View and assign To table View Cell
     @objc func fetchDataFromAPI() {
+        showActivityIndicator()
         NetworkApiManager.sharedNetworkApiManager.getDataFromUrl(BaseUrlPath) { (dt: DataInfo?, err: Error?) in
             if let error = err{
                 self.arrayInfoList.removeAll()
                 DispatchQueue.main.async {
-                    //self.loader.hideActivity(view: self.view)
+                    self.hideActivity()
                     self.tableInfoList.reloadData()
                 }
                 print("Error In API data:\(error)")
@@ -53,14 +55,12 @@ class HomeViewController: UIViewController {
                 self.arrayInfoList = data.rows
                 DispatchQueue.main.async {
                     self.tableInfoList.reloadData()
-                    //self.loader.hideActivity(view: self.view)
+                    self.hideActivity()
                     self.navigationItem.title = data.title ?? "InfoView"
                 }
             }
         }
     }
-
-
 }
 
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
@@ -76,5 +76,25 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
+}
+
+extension HomeViewController{
+    func showActivityIndicator() {
+        if #available(iOS 13.0, *) {
+            activity = UIActivityIndicatorView(style: .large)
+        } else {
+            // Fallback on earlier versions
+            activity = UIActivityIndicatorView(style: .whiteLarge)
+        }
+        activity.center = view.center
+        activity.color = .red
+        activity.hidesWhenStopped = true
+        view.addSubview(activity)
+        activity.startAnimating()
+    }
+    
+    func hideActivity() {
+        activity.stopAnimating()
+    }
 }
 

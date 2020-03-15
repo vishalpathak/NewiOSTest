@@ -19,6 +19,8 @@
 		EE118D8D241E75740069CB1F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D8C241E75740069CB1F /* DataModel.swift */; };
 		EE118D90241E76020069CB1F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D8F241E76020069CB1F /* Constants.swift */; };
 		EE118D93241E782C0069CB1F /* NetworkApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D92241E782C0069CB1F /* NetworkApiManager.swift */; };
+		EE118D98241EA82D0069CB1F /* ReachabilityCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D97241EA82D0069CB1F /* ReachabilityCheck.swift */; };
+		EE118D9A241EAB4B0069CB1F /* UIAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D99241EAB4B0069CB1F /* UIAlertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		EE118D8C241E75740069CB1F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		EE118D8F241E76020069CB1F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EE118D92241E782C0069CB1F /* NetworkApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiManager.swift; sourceTree = "<group>"; };
+		EE118D97241EA82D0069CB1F /* ReachabilityCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityCheck.swift; sourceTree = "<group>"; };
+		EE118D99241EAB4B0069CB1F /* UIAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		EE118D65241E67FE0069CB1F /* NewTestIOS */ = {
 			isa = PBXGroup;
 			children = (
+				EE118D96241EA80A0069CB1F /* Util */,
 				EE118D91241E77D10069CB1F /* NetworkManager */,
 				EE118D8E241E75B80069CB1F /* Constant */,
 				EE118D8B241E75570069CB1F /* DataModel */,
@@ -170,6 +175,15 @@
 				EE118D92241E782C0069CB1F /* NetworkApiManager.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		EE118D96241EA80A0069CB1F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EE118D97241EA82D0069CB1F /* ReachabilityCheck.swift */,
+				EE118D99241EAB4B0069CB1F /* UIAlertHelper.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +354,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE118D8D241E75740069CB1F /* DataModel.swift in Sources */,
+				EE118D98241EA82D0069CB1F /* ReachabilityCheck.swift in Sources */,
+				EE118D9A241EAB4B0069CB1F /* UIAlertHelper.swift in Sources */,
 				EE118D6B241E67FE0069CB1F /* HomeViewController.swift in Sources */,
 				EE118D67241E67FE0069CB1F /* AppDelegate.swift in Sources */,
 				EE118D8A241E72810069CB1F /* HomeInfoTableViewCell.swift in Sources */,

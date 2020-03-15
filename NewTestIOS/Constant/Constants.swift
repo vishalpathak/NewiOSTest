@@ -16,3 +16,9 @@ struct HttpResponse {
     static let ResponseSuccess = 200
     static let ResponseNotFound = 404
 }
+
+struct AlertMessages {
+    static let AlertTitle = "Error"
+    static let MessageInfo = "Internet is not connected. Please check settings."
+    static let ButtonTitle = "OK"
+}

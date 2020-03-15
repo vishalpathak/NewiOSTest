@@ -40,25 +40,31 @@ class HomeViewController: UIViewController {
     
     //MARK:- Fetch Data from API, assign to array, Populate table View and assign To table View Cell
     @objc func fetchDataFromAPI() {
-        showActivityIndicator()
-        NetworkApiManager.sharedNetworkApiManager.getDataFromUrl(BaseUrlPath) { (dt: DataInfo?, err: Error?) in
-            if let error = err{
-                DispatchQueue.main.async {
-                    self.hideActivity()
+        if ReachabilityCheck.isConnectedToNetwork(){
+            
+            showActivityIndicator()
+            NetworkApiManager.sharedNetworkApiManager.getDataFromUrl(BaseUrlPath) { (dt: DataInfo?, err: Error?) in
+                if let error = err{
+                    DispatchQueue.main.async {
+                        self.hideActivity()
+                    }
+                    print("Error In API data:\(error)")
+                    return
                 }
-                print("Error In API data:\(error)")
-                return
-            }
-            if let data = dt{
-                self.arrayInfoList = data.rows
-                DispatchQueue.main.async {
-                    self.tableInfoList.reloadData()
-                    self.hideActivity()
-                    self.navigationItem.title = data.title ?? "InfoView"
+                if let data = dt{
+                    self.arrayInfoList = data.rows
+                    DispatchQueue.main.async {
+                        self.tableInfoList.reloadData()
+                        self.hideActivity()
+                        self.navigationItem.title = data.title ?? "InfoView"
+                    }
                 }
             }
-        }
+        }else{
+    
+            UIAlertHelper.presentAlertOnController(self, title: AlertMessages.AlertTitle, message: AlertMessages.MessageInfo)
     }
+}
 }
 
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{

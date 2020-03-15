@@ -21,4 +21,5 @@ struct AlertMessages {
     static let AlertTitle = "Error"
     static let MessageInfo = "Internet is not connected. Please check settings."
     static let ButtonTitle = "OK"
+    static let CommonError = "Something went wrong please try after sometime."
 }

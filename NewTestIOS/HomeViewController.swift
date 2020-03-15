@@ -15,12 +15,13 @@ class HomeViewController: UIViewController {
     fileprivate let cellId = "cellId"
     
     //MARK:- Data Variables
-    var arrayInfoList:[String] = ["aa", "bb"]
+    var arrayInfoList = [RowInfo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpUIForViews()
+        fetchDataFromAPI()
     }
     
     //MARK:- Set UI for views
@@ -36,8 +37,27 @@ class HomeViewController: UIViewController {
         view.addSubview(tableInfoList)
     }
     
+    //MARK:- Fetch Data from API, assign to array, Populate table View and assign To table View Cell
     @objc func fetchDataFromAPI() {
-        
+        NetworkApiManager.sharedNetworkApiManager.getDataFromUrl(BaseUrlPath) { (dt: DataInfo?, err: Error?) in
+            if let error = err{
+                self.arrayInfoList.removeAll()
+                DispatchQueue.main.async {
+                    //self.loader.hideActivity(view: self.view)
+                    self.tableInfoList.reloadData()
+                }
+                print("Error In API data:\(error)")
+                return
+            }
+            if let data = dt{
+                self.arrayInfoList = data.rows
+                DispatchQueue.main.async {
+                    self.tableInfoList.reloadData()
+                    //self.loader.hideActivity(view: self.view)
+                    self.navigationItem.title = data.title ?? "InfoView"
+                }
+            }
+        }
     }
 
 
@@ -51,9 +71,8 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableInfoList.dequeueReusableCell(withIdentifier: cellId) as! HomeInfoTableViewCell
-        //let obj = arrayInfoList[indexPath.row]
-        cell.textLabel?.text = arrayInfoList[indexPath.row]
-        //cell.setData(data: obj)
+        let obj = arrayInfoList[indexPath.row]
+        cell.setData(data: obj)
         return cell
     }
     

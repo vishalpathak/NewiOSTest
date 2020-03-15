@@ -18,6 +18,7 @@
 		EE118D8A241E72810069CB1F /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D89241E72810069CB1F /* HomeInfoTableViewCell.swift */; };
 		EE118D8D241E75740069CB1F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D8C241E75740069CB1F /* DataModel.swift */; };
 		EE118D90241E76020069CB1F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D8F241E76020069CB1F /* Constants.swift */; };
+		EE118D93241E782C0069CB1F /* NetworkApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D92241E782C0069CB1F /* NetworkApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		EE118D89241E72810069CB1F /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		EE118D8C241E75740069CB1F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		EE118D8F241E76020069CB1F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EE118D92241E782C0069CB1F /* NetworkApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		EE118D65241E67FE0069CB1F /* NewTestIOS */ = {
 			isa = PBXGroup;
 			children = (
+				EE118D91241E77D10069CB1F /* NetworkManager */,
 				EE118D8E241E75B80069CB1F /* Constant */,
 				EE118D8B241E75570069CB1F /* DataModel */,
 				EE118D88241E72500069CB1F /* TableViewCells */,
@@ -159,6 +162,14 @@
 				EE118D8F241E76020069CB1F /* Constants.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		EE118D91241E77D10069CB1F /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				EE118D92241E782C0069CB1F /* NetworkApiManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 				EE118D67241E67FE0069CB1F /* AppDelegate.swift in Sources */,
 				EE118D8A241E72810069CB1F /* HomeInfoTableViewCell.swift in Sources */,
 				EE118D69241E67FE0069CB1F /* SceneDelegate.swift in Sources */,
+				EE118D93241E782C0069CB1F /* NetworkApiManager.swift in Sources */,
 				EE118D90241E76020069CB1F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -62,4 +62,21 @@ class HomeInfoTableViewCell: UITableViewCell {
         ]
         NSLayoutConstraint.activate(constraints)
     }
+    
+    func setData(data: RowInfo){
+        titleLable.text = data.title ?? "Sorry! Title not available"
+        descriptionLabel.text = data.description ?? "Sorry! Description not available"
+        if let url = data.imageHref{
+            let newUrl = URL(string: url)
+            self.infoImage!.sd_setImage(with: newUrl) { (image, error, cache, urls) in
+                if (error != nil) {
+                    // Failed to load image
+                    self.infoImage!.image = nil
+                } else {
+                    // Successful in loading image
+                    self.infoImage!.image = image
+                }
+            }
+        }
+    }
 }

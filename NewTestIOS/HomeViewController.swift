@@ -41,7 +41,6 @@ class HomeViewController: UIViewController {
     //MARK:- Fetch Data from API, assign to array, Populate table View and assign To table View Cell
     @objc func fetchDataFromAPI() {
         if ReachabilityCheck.isConnectedToNetwork(){
-            
             showActivityIndicator()
             NetworkApiManager.sharedNetworkApiManager.getDataFromUrl(BaseUrlPath) { (dt: DataInfo?, err: Error?) in
                 if let _ = err{
@@ -82,6 +81,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     
 }
 
+//MARK:- For showing Activity Indicator
 extension HomeViewController{
     func showActivityIndicator() {
         if #available(iOS 13.0, *) {

@@ -63,6 +63,7 @@ class HomeInfoTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate(constraints)
     }
     
+    //MARK:- Set Data to TableView Cell
     func setData(data: RowInfo){
         titleLable.text = data.title ?? "Sorry! Title not available"
         descriptionLabel.text = data.description ?? "Sorry! Description not available"

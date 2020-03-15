@@ -19,12 +19,14 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpUIForViews()
     }
     
     //MARK:- Set UI for views
     func setUpUIForViews() -> Void {
-       // let refresh = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(fetchDataFromAPI))
-       // self.navigationItem.rightBarButtonItem  = refresh
+        let refresh = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(fetchDataFromAPI))
+        self.navigationItem.rightBarButtonItem  = refresh
     
         view.backgroundColor = .white
         tableInfoList.delegate = self
@@ -32,6 +34,10 @@ class HomeViewController: UIViewController {
         tableInfoList.frame = view.frame
         tableInfoList.register(HomeInfoTableViewCell.self, forCellReuseIdentifier: cellId)
         view.addSubview(tableInfoList)
+    }
+    
+    @objc func fetchDataFromAPI() {
+        
     }
 
 

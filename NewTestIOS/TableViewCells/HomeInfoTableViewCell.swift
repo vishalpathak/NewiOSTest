@@ -33,5 +33,33 @@ class HomeInfoTableViewCell: UITableViewCell {
         return img
     }()
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubview(titleLable)
+        addSubview(descriptionLabel)
+        addSubview(infoImage!)
+        setUpAutoLayOut()
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setUpAutoLayOut() {
+        
+        let constraints = [titleLable.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+                           titleLable.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                           titleLable.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                           
+                           descriptionLabel.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 16),
+                           descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                           descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                           
+                           infoImage!.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16),
+                           infoImage!.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                           infoImage!.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                           infoImage!.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
+        ]
+        NSLayoutConstraint.activate(constraints)
+    }
 }

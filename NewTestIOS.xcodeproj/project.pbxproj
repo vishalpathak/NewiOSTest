@@ -16,6 +16,8 @@
 		EE118D73241E67FF0069CB1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE118D71241E67FF0069CB1F /* LaunchScreen.storyboard */; };
 		EE118D7E241E67FF0069CB1F /* NewTestIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D7D241E67FF0069CB1F /* NewTestIOSTests.swift */; };
 		EE118D8A241E72810069CB1F /* HomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D89241E72810069CB1F /* HomeInfoTableViewCell.swift */; };
+		EE118D8D241E75740069CB1F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D8C241E75740069CB1F /* DataModel.swift */; };
+		EE118D90241E76020069CB1F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D8F241E76020069CB1F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		EE118D7D241E67FF0069CB1F /* NewTestIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTestIOSTests.swift; sourceTree = "<group>"; };
 		EE118D7F241E67FF0069CB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE118D89241E72810069CB1F /* HomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoTableViewCell.swift; sourceTree = "<group>"; };
+		EE118D8C241E75740069CB1F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		EE118D8F241E76020069CB1F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 		EE118D65241E67FE0069CB1F /* NewTestIOS */ = {
 			isa = PBXGroup;
 			children = (
+				EE118D8E241E75B80069CB1F /* Constant */,
+				EE118D8B241E75570069CB1F /* DataModel */,
 				EE118D88241E72500069CB1F /* TableViewCells */,
 				EE118D66241E67FE0069CB1F /* AppDelegate.swift */,
 				EE118D68241E67FE0069CB1F /* SceneDelegate.swift */,
@@ -137,6 +143,22 @@
 				EE118D89241E72810069CB1F /* HomeInfoTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		EE118D8B241E75570069CB1F /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE118D8C241E75740069CB1F /* DataModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		EE118D8E241E75B80069CB1F /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				EE118D8F241E76020069CB1F /* Constants.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,10 +328,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE118D8D241E75740069CB1F /* DataModel.swift in Sources */,
 				EE118D6B241E67FE0069CB1F /* HomeViewController.swift in Sources */,
 				EE118D67241E67FE0069CB1F /* AppDelegate.swift in Sources */,
 				EE118D8A241E72810069CB1F /* HomeInfoTableViewCell.swift in Sources */,
 				EE118D69241E67FE0069CB1F /* SceneDelegate.swift in Sources */,
+				EE118D90241E76020069CB1F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

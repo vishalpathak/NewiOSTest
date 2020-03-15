@@ -43,10 +43,8 @@ class HomeViewController: UIViewController {
         showActivityIndicator()
         NetworkApiManager.sharedNetworkApiManager.getDataFromUrl(BaseUrlPath) { (dt: DataInfo?, err: Error?) in
             if let error = err{
-                self.arrayInfoList.removeAll()
                 DispatchQueue.main.async {
                     self.hideActivity()
-                    self.tableInfoList.reloadData()
                 }
                 print("Error In API data:\(error)")
                 return

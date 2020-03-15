@@ -20,7 +20,7 @@ class NetworkApiManager: NSObject{
                 return
             }
             if let res = response as? HTTPURLResponse{
-                if res.statusCode == 200{
+                if res.statusCode == HttpResponse.ResponseSuccess{
                 guard let dt = data else {
                     print("Error in Data API")
                     return
@@ -37,7 +37,7 @@ class NetworkApiManager: NSObject{
                     completion(nil, jsonError)
                 }
                 }else{
-                    //Handle Specific Error Codes
+                    //Handle Specific Error Codes and error messgaes
                 }
             }
         }

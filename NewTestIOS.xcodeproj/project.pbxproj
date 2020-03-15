@@ -12,7 +12,6 @@
 		EE118D67241E67FE0069CB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D66241E67FE0069CB1F /* AppDelegate.swift */; };
 		EE118D69241E67FE0069CB1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D68241E67FE0069CB1F /* SceneDelegate.swift */; };
 		EE118D6B241E67FE0069CB1F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D6A241E67FE0069CB1F /* HomeViewController.swift */; };
-		EE118D6E241E67FE0069CB1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE118D6C241E67FE0069CB1F /* Main.storyboard */; };
 		EE118D70241E67FF0069CB1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE118D6F241E67FF0069CB1F /* Assets.xcassets */; };
 		EE118D73241E67FF0069CB1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE118D71241E67FF0069CB1F /* LaunchScreen.storyboard */; };
 		EE118D7E241E67FF0069CB1F /* NewTestIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D7D241E67FF0069CB1F /* NewTestIOSTests.swift */; };
@@ -39,7 +38,6 @@
 		EE118D66241E67FE0069CB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE118D68241E67FE0069CB1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE118D6A241E67FE0069CB1F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		EE118D6D241E67FE0069CB1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE118D6F241E67FF0069CB1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE118D72241E67FF0069CB1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE118D74241E67FF0069CB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				EE118D66241E67FE0069CB1F /* AppDelegate.swift */,
 				EE118D68241E67FE0069CB1F /* SceneDelegate.swift */,
 				EE118D6A241E67FE0069CB1F /* HomeViewController.swift */,
-				EE118D6C241E67FE0069CB1F /* Main.storyboard */,
 				EE118D6F241E67FF0069CB1F /* Assets.xcassets */,
 				EE118D71241E67FF0069CB1F /* LaunchScreen.storyboard */,
 				EE118D74241E67FF0069CB1F /* Info.plist */,
@@ -217,7 +214,6 @@
 			files = (
 				EE118D73241E67FF0069CB1F /* LaunchScreen.storyboard in Resources */,
 				EE118D70241E67FF0069CB1F /* Assets.xcassets in Resources */,
-				EE118D6E241E67FE0069CB1F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,14 +320,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EE118D6C241E67FE0069CB1F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE118D6D241E67FE0069CB1F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EE118D71241E67FF0069CB1F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -464,6 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NewTestIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,6 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NewTestIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

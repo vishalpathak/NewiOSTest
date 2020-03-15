@@ -77,6 +77,8 @@ class HomeInfoTableViewCell: UITableViewCell {
                     self.infoImage!.image = image
                 }
             }
+        }else{
+            self.infoImage!.image = nil
         }
     }
 }

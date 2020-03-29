@@ -11,8 +11,16 @@ import UIKit
 class HomeViewController: UIViewController {
    
     //MARK:- UI Compenents
-    fileprivate var tableInfoList = UITableView()
     fileprivate let cellId = "cellId"
+    fileprivate lazy var tableInfoList: UITableView = {
+       let tb = UITableView()
+        tb.delegate = self
+        tb.dataSource = self
+        tb.translatesAutoresizingMaskIntoConstraints = false
+        tb.register(HomeInfoTableViewCell.self, forCellReuseIdentifier: cellId)
+        return tb
+    }()
+
     var activity = UIActivityIndicatorView()
     
     //MARK:- Data Variables
@@ -31,11 +39,17 @@ class HomeViewController: UIViewController {
         self.navigationItem.rightBarButtonItem  = refresh
     
         view.backgroundColor = .white
-        tableInfoList.delegate = self
-        tableInfoList.dataSource = self
-        tableInfoList.frame = view.frame
-        tableInfoList.register(HomeInfoTableViewCell.self, forCellReuseIdentifier: cellId)
         view.addSubview(tableInfoList)
+        
+        let views = ["table":self.tableInfoList]
+
+        var constraints =  NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[table]-0-|", options: NSLayoutConstraint.FormatOptions.alignAllTop, metrics: nil, views: views)
+        self.view.addConstraints(constraints)
+
+        let stringConstraint = "V:|-0-[table]-0-|"
+
+        constraints =  NSLayoutConstraint.constraints(withVisualFormat: stringConstraint, options: NSLayoutConstraint.FormatOptions.alignAllCenterX, metrics: nil, views: views)
+        self.view.addConstraints(constraints)
     }
     
     //MARK:- Fetch Data from API, assign to array, Populate table View and assign To table View Cell

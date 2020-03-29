@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     var activity = UIActivityIndicatorView()
     
     //MARK:- Data Variables
-    var arrayInfoList = [RowInfo]()
+    var arrayInfoList = [DataInfoViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,10 @@ class HomeViewController: UIViewController {
                     return
                 }
                 if let data = dt{
-                    self.arrayInfoList = data.rows
+                    //Map data Model Object to view model object
+                    self.arrayInfoList = data.rows.map({ (rowObj: RowInfo) -> DataInfoViewModel in
+                        return DataInfoViewModel(dataInfo: rowObj)
+                    })
                     DispatchQueue.main.async {
                         self.tableInfoList.reloadData()
                         self.hideActivity()
@@ -89,7 +92,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableInfoList.dequeueReusableCell(withIdentifier: cellId) as! HomeInfoTableViewCell
         let obj = arrayInfoList[indexPath.row]
-        cell.setData(data: obj)
+        cell.dataInfoModel = obj
         return cell
     }
     

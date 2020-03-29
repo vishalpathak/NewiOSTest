@@ -23,3 +23,10 @@ struct AlertMessages {
     static let ButtonTitle = "OK"
     static let CommonError = "Something went wrong please try after sometime."
 }
+
+struct DefaultStrings{
+    static let DefaultNavigationTitle = "Info"
+    static let DefaultTitle = "Sorry! title not available"
+    static let DefaultDescription = "Sorry! description not available"
+    static let DefaultImageNotAvailable = "Image not available now."
+}

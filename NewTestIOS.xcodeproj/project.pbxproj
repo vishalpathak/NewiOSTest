@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		EE118D93241E782C0069CB1F /* NetworkApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D92241E782C0069CB1F /* NetworkApiManager.swift */; };
 		EE118D98241EA82D0069CB1F /* ReachabilityCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D97241EA82D0069CB1F /* ReachabilityCheck.swift */; };
 		EE118D9A241EAB4B0069CB1F /* UIAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118D99241EAB4B0069CB1F /* UIAlertHelper.swift */; };
+		EE5CEAED243113D00081E8AC /* DataInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CEAEC243113D00081E8AC /* DataInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		EE118D92241E782C0069CB1F /* NetworkApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiManager.swift; sourceTree = "<group>"; };
 		EE118D97241EA82D0069CB1F /* ReachabilityCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityCheck.swift; sourceTree = "<group>"; };
 		EE118D99241EAB4B0069CB1F /* UIAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertHelper.swift; sourceTree = "<group>"; };
+		EE5CEAEC243113D00081E8AC /* DataInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		EE118D65241E67FE0069CB1F /* NewTestIOS */ = {
 			isa = PBXGroup;
 			children = (
+				EE5CEAEB2431138F0081E8AC /* ViewModel */,
 				EE118D96241EA80A0069CB1F /* Util */,
 				EE118D91241E77D10069CB1F /* NetworkManager */,
 				EE118D8E241E75B80069CB1F /* Constant */,
@@ -184,6 +187,14 @@
 				EE118D99241EAB4B0069CB1F /* UIAlertHelper.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		EE5CEAEB2431138F0081E8AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE5CEAEC243113D00081E8AC /* DataInfoViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5CEAED243113D00081E8AC /* DataInfoViewModel.swift in Sources */,
 				EE118D8D241E75740069CB1F /* DataModel.swift in Sources */,
 				EE118D98241EA82D0069CB1F /* ReachabilityCheck.swift in Sources */,
 				EE118D9A241EAB4B0069CB1F /* UIAlertHelper.swift in Sources */,

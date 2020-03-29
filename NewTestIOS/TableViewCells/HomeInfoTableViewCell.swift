@@ -33,6 +33,23 @@ class HomeInfoTableViewCell: UITableViewCell {
         return img
     }()
     
+    //MARK:- ViewModel Object set data to UI object using ViewModel
+       var dataInfoModel: DataInfoViewModel? {
+           didSet{
+            titleLable.text = dataInfoModel?.title
+            descriptionLabel.text = dataInfoModel?.description
+            let newUrl = URL(string: dataInfoModel?.imageInfo ?? "")
+               self.infoImage!.sd_setImage(with: newUrl) { (image, error, cache, urls) in
+                   if (error != nil) {
+                       // Failed to load image
+                       self.infoImage!.image = nil
+                   } else {
+                       // Successful in loading image
+                       self.infoImage!.image = image
+                   }
+               }
+           }
+       }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLable)
@@ -61,25 +78,5 @@ class HomeInfoTableViewCell: UITableViewCell {
                            infoImage!.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
         ]
         NSLayoutConstraint.activate(constraints)
-    }
-    
-    //MARK:- Set Data to TableView Cell
-    func setData(data: RowInfo){
-        titleLable.text = data.title ?? "Sorry! Title not available"
-        descriptionLabel.text = data.description ?? "Sorry! Description not available"
-        if let url = data.imageHref{
-            let newUrl = URL(string: url)
-            self.infoImage!.sd_setImage(with: newUrl) { (image, error, cache, urls) in
-                if (error != nil) {
-                    // Failed to load image
-                    self.infoImage!.image = nil
-                } else {
-                    // Successful in loading image
-                    self.infoImage!.image = image
-                }
-            }
-        }else{
-            self.infoImage!.image = nil
-        }
     }
 }

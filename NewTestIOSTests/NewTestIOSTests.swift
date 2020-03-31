@@ -30,5 +30,13 @@ class NewTestIOSTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testDataInfoModel() {
+        //let newTitle = "toronto" + " "
+        let objRowInfo = RowInfo(title: "Toronto", description: "It is big city in Canada", imageHref: "http://newimg.com")
+        let objViewModel = DataInfoViewModel(dataInfo: objRowInfo)
+        
+        XCTAssertEqual(objRowInfo.title, objViewModel.title)
+    }
 
 }

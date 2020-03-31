@@ -30,3 +30,8 @@ struct DefaultStrings{
     static let DefaultDescription = "Sorry! description not available"
     static let DefaultImageNotAvailable = "Image not available now."
 }
+
+struct CommonText {
+    static let CommonTitle = "Title:"
+    static let CommonDescription = "Description:"
+}

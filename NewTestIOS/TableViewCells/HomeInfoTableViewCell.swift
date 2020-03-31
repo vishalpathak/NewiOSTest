@@ -10,11 +10,14 @@ import UIKit
 import SDWebImage
 
 class HomeInfoTableViewCell: UITableViewCell {
+   
+    //MARK:- UI Compenents
     fileprivate let titleLable: UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.textColor = .black
         title.numberOfLines = 0
+        title.font = UIFont.boldSystemFont(ofSize: 20.0)
         return title
     }()
     
@@ -34,27 +37,34 @@ class HomeInfoTableViewCell: UITableViewCell {
     }()
     
     //MARK:- ViewModel Object set data to UI object using ViewModel
-       var dataInfoModel: DataInfoViewModel? {
-           didSet{
-            titleLable.text = dataInfoModel?.title
-            descriptionLabel.text = dataInfoModel?.description
+    var dataInfoModel: DataInfoViewModel? {
+        didSet{
+            titleLable.text = "\(CommonText.CommonTitle) \(dataInfoModel?.title ?? DefaultStrings.DefaultTitle)"
+            descriptionLabel.text = "\(CommonText.CommonDescription) \(dataInfoModel?.description ?? DefaultStrings.DefaultDescription)"
             let newUrl = URL(string: dataInfoModel?.imageInfo ?? "")
-               self.infoImage!.sd_setImage(with: newUrl) { (image, error, cache, urls) in
-                   if (error != nil) {
-                       // Failed to load image
-                       self.infoImage!.image = nil
-                   } else {
-                       // Successful in loading image
-                       self.infoImage!.image = image
-                   }
-               }
-           }
-       }
+            if let imageInfo = self.infoImage{
+                imageInfo.sd_imageIndicator = SDWebImageActivityIndicator.gray
+                imageInfo.sd_setImage(with: newUrl) { (image, error, cache, urls) in
+                    if (error != nil) {
+                        // Failed to load image
+                        imageInfo.image = nil
+                    } else {
+                        // Successful in loading image
+                        imageInfo.image = image
+                    }
+                }
+            }
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLable)
         addSubview(descriptionLabel)
-        addSubview(infoImage!)
+        if let imgView = infoImage{
+            addSubview(imgView)
+        }
+        
         setUpAutoLayOut()
     }
     

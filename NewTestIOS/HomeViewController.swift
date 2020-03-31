@@ -65,14 +65,14 @@ class HomeViewController: UIViewController {
                     return
                 }
                 if let data = dt{
-                    //Map data Model Object to view model object
+                    //Map DataModel Object to DataViewModel object
                     self.arrayInfoList = data.rows.map({ (rowObj: RowInfo) -> DataInfoViewModel in
                         return DataInfoViewModel(dataInfo: rowObj)
                     })
                     DispatchQueue.main.async {
                         self.tableInfoList.reloadData()
                         self.hideActivity()
-                        self.navigationItem.title = data.title ?? "InfoView"
+                        self.navigationItem.title = data.title ?? DefaultStrings.DefaultNavigationTitle
                     }
                 }
             }

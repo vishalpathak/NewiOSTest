@@ -46,7 +46,7 @@ class NewTestIOSTests: XCTestCase {
         XCTAssertEqual(objRowInfo.imageHref, objViewModel.imageInfo)
     }
     
-    //MARK:- Unit Test For Api data fecth call
+    //MARK:- Unit Test For API data fecth call
     func testApiDataFetch() {
         //let str = "About" // Result for Failing Test Case
         let str = "About Canada" // Result for passing Test Case
@@ -68,6 +68,4 @@ class NewTestIOSTests: XCTestCase {
         
         self.waitForExpectations(timeout: 10, handler: nil)
     }
-    
-
 }

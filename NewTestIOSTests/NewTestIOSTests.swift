@@ -31,7 +31,7 @@ class NewTestIOSTests: XCTestCase {
         }
     }
     
-    //MARK:- For testing DataInfoViewModel
+    //MARK:- Unit test For testing DataInfoViewModel
     func testDataInfoModel() {
        
         //Model Object for passing test case
@@ -46,7 +46,7 @@ class NewTestIOSTests: XCTestCase {
         XCTAssertEqual(objRowInfo.imageHref, objViewModel.imageInfo)
     }
     
-    //MARK:- For Api data fecth call
+    //MARK:- Unit Test For Api data fecth call
     func testApiDataFetch() {
         //let str = "About" // Result for Failing Test Case
         let str = "About Canada" // Result for passing Test Case
